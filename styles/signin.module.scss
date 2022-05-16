@@ -1,0 +1,134 @@
+.bgColor {
+	background-color: rgb(10, 25, 41);
+	color: #fff;
+}
+.signContainer {
+	height: 100vh;
+	box-sizing: unset;
+	padding: 0px;
+	max-width: 456px;
+}
+
+.boxWrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	position: relative;
+	margin: 0 auto 25px;
+	padding: 35px;
+	&Inner {
+		position: relative;
+		width: 100%;
+		padding: 24px 0;
+		background: none;
+		border: none;
+		box-sizing: border-box;
+	}
+}
+
+.signLogo {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	margin: 0px auto 40px auto;
+	background-image: url(https://hirobucket1.s3.eu-central-1.amazonaws.com/ay%C4%B1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.inputDiv {
+	width: 100%;
+	
+	& > div {
+		width: 100%;
+		color: #fff !important;
+		fieldset{
+			
+			border-color: #fff !important;
+		}
+		
+		&:hover {
+			fieldset {
+
+			}
+		}
+	}
+
+}
+
+.loginButton {
+	color: #ffffff;
+	background: linear-gradient(
+		to right bottom,
+		rgb(0, 127, 255),
+		rgb(0, 89, 178) 120%
+	);
+	width: 100%;
+	white-space: normal;
+	margin: 3px 0;
+	padding: 0 20px;
+	font-size: 16px;
+	line-height: 20px;
+	min-height: 40px;
+	text-transform: capitalize;
+	// transition: 2s ease-in-out;
+	&:hover {
+		transition: 2s ease-in-out;
+		background: linear-gradient(
+			to right bottom,
+			rgb(0, 127, 220),
+			rgb(0, 83, 167) 150%
+		);
+		color: #ffffff;
+	}
+}
+
+.othersDiv {
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+
+.othersLine {
+	position: relative;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	font-family: "Noto Sans", "Object Sans", sans-serif;
+	line-height: 21px;
+	text-transform: none;
+	&::before {
+		width: 500px;
+		content: "";
+		height: 1px;
+		background-color: #fff;
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		margin-right: 12px;
+	}
+	&::after {
+		width: 500px;
+		content: "";
+		height: 1px;
+		background-color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 100%;
+		margin-left: 12px;
+	}
+}
+
+.githubButton {
+	color: #ffffff;
+	transition: 0.3s ease;
+	&:hover {
+		color: aliceblue;
+	}
+	& > svg {
+		width: 40px;
+		height: 40px;
+	}
+}

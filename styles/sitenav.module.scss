@@ -1,0 +1,138 @@
+.sitenav {
+	z-index: 1000;
+	position: relative;
+	&Full {
+		position: relative;
+	}
+	&Thin {
+		position: relative;
+		.sitenavBar {
+			margin: 0px;
+			height: 50px;
+		}
+		.sitenavArea {
+			position: fixed;
+			max-width: unset;
+			background: black;
+			padding: 3px;
+			transition: all 0.3s ease-in-out;
+			// transition-delay: 0.1s;
+		}
+	}
+	@media (max-width: 900px) {
+		display: none;
+	}
+}
+
+.sitenavMobile {
+	z-index: 1000;
+	position: relative;
+	.sitenavThin {
+		position: relative;
+		.sitenavBar {
+			margin: 0px;
+			height: 50px;
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			align-items: center;
+		}
+		.sitenavArea {
+			position: fixed;
+			max-width: unset;
+			background: black;
+			padding: 3px;
+			@media (max-width: 900px) {
+				padding: 3px 45px;
+			}
+			@media (max-width: 600px) {
+				padding: 3px 30px;
+			}
+		}
+		.sitenavButton {
+			float: none;
+		}
+	}
+	@media (min-width: 901px) {
+		display: none;
+	}
+}
+
+.sitenavMobileMenuIcon {
+	width: 25px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	left: 0%;
+	color: #30cfd0;
+}
+
+.sitenavMobileHomeIcon {
+	width: 47px;
+	height: 47px;
+	border-radius: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	left: 50%;
+}
+
+.sitenavArea {
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sitenavBar {
+	transition: all 0.3s ease-in-out;
+	margin-left: 110px;
+	margin: 100px 85px 0;
+	height: 60px;
+	@media (max-width: 1200px) {
+		margin: 100px 60px;
+	}
+	@media (max-width: 900px) {
+		margin: 100px 45px;
+	}
+	@media (max-width: 600px) {
+		margin: 100px 30px;
+	}
+}
+
+.sitenavButton {
+	float: left;
+	padding: 0px 20px;
+	height: 100%;
+	font-size: 1.65em;
+	background: linear-gradient(to top, #30cfd0 20%, #330867 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: "Open Sans", sans-serif !important;
+	text-transform: capitalize;
+	z-index: 1;
+	font-weight: 700;
+	transition: color 0.2s ease-out;
+	&:hover {
+		color: #fff;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: unset;
+	}
+}
+
+.sitenavButtonRight {
+	float: right;
+}
+
+.sitenavSubscribe {
+	background: linear-gradient(to top, #e25065 20%, #30cfd0 100%);
+	font-weight: 600;
+	background-clip: unset;
+	-webkit-background-clip: unset;
+	-webkit-text-fill-color: unset;
+}

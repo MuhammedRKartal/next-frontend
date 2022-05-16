@@ -1,0 +1,44 @@
+.fullHeaderNext {
+	filter: brightness(0.8);
+	max-width: 320% !important;
+	min-width: 100% !important;
+	width: unset !important;
+	height: unset !important;
+}
+
+.fullHeaderContainer {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	word-break: break-word;
+	padding-bottom: 80px;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 1;
+}
+
+.fullHeaderText {
+	max-width: 800px;
+}
+
+.mainTitle {
+	color: #fff;
+	text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+	font-weight: 700;
+	font-size: 2.8em;
+	margin-bottom: 15px;
+}
+
+.beigeFont {
+	color: #ebdec2;
+	text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+	font-weight: 400;
+	font-size: 1.45rem;
+}
+
+.bgImage {
+	background-image: url(https://parabuckk.s3.eu-central-1.amazonaws.com/video-to-gif-converter.gif);
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}

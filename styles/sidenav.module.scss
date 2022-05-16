@@ -1,0 +1,26 @@
+
+.sidenavContainer{
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    left: -300px;
+    top: 0px;
+    z-index: 9999;
+    color: #fff;
+    transform: translateX(297px);
+    transition: transform 0.3s ease-out;
+    background-color: azure;
+}
+.sidenavContainerClosed{
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    left: -300px;
+    top: 0px;
+    z-index: 9999;
+    color: #fff;
+    transform: translateX(-297px);
+    transition: transform 0.6s ease-out;
+    background-color: azure;
+}
+

@@ -15,6 +15,7 @@ const nextConfig = {
 		EMAIL_SERVER: process.env.EMAIL_SERVER,
 		EMAIL_FROM: process.env.EMAIL_FROM,
 		MONGODB_URI: process.env.MONGODB_URI,
+		FEEDREALBVADMIN: process.env.FEEDREALBVADMIN,
 	},
 	images: {
 		domains: [

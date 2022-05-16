@@ -11,7 +11,11 @@ import { decrement, increment, setCounter } from "../store/slices/counterSlice";
 import styles from "../styles/fullheader.module.scss";
 import { controlSession } from "../utils";
 
-export default function Home({ sess, increase }) {
+import { HttpLink, ApolloClient, InMemoryCache } from "@apollo/client";
+import { FEEDREAL_ARTICLES } from "../graphql/Queries";
+import { useQuery } from "@apollo/client";
+
+export default function Home({ sess, art }) {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	// console.log(state);
@@ -30,8 +34,8 @@ export default function Home({ sess, increase }) {
 	return (
 		<div>
 			<Head>
-				<title>Yalova Paragliding</title>
-				<meta name="description" content="Yalova Paragliding" />
+				<title>Deneme</title>
+				<meta name="description" content="Deneme" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
@@ -42,9 +46,10 @@ export default function Home({ sess, increase }) {
 						SHADOWLANDS SEASON 3 IS NOW LIVE!
 					</Typography>
 					<Typography className={`${styles.fullHeaderText} ${styles.beigeFont}`}>
-						The fight against the Jailer and his forces continues in this last chapter of
+						{art.data.feedrealWebsite[0].shortText}
+						{/* The fight against the Jailer and his forces continues in this last chapter of
 						the ongoing saga. Experience the all-new Sepulcher of the First Ones raid, a new
-						PvP and Mythic Keystone Dungeon season, and more!
+						PvP and Mythic Keystone Dungeon season, and more! */}
 					</Typography>
 					<button onClick={() => dispatch(increment())}>Increment</button>
 					<button onClick={() => dispatch(decrement())}>Decrement</button>
@@ -72,14 +77,38 @@ export const getServerSideProps = wrapper.getServerSideProps(
 			console.log(sessionToken);
 			const user = await controlSession(sessionToken, store);
 
+			const httpLink = new HttpLink({
+				uri: process.env.FEEDREALBVADMIN,
+			});
+
+			const apolloClient = new ApolloClient({
+				link: httpLink,
+				cache: new InMemoryCache(),
+			});
+
+			const data = await apolloClient
+				.query({
+					query: FEEDREAL_ARTICLES,
+					variables: { limit: 3 },
+				})
+				.then((data) => {
+					return data;
+				})
+				.catch((err) => {
+					// console.log(err);
+					return null;
+				});
+
+			console.log(data);
+
 			if (req.cookies.counterValue !== 0) {
 				store.dispatch(setCounter(parseInt(req.cookies.counterValue)));
 			}
-			// console.log(store.getState().counter.count);
 
 			return {
 				props: {
 					sess: user,
+					art: data,
 				},
 			};
 		}

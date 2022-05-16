@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 	}, [router]);
 
 	const httpLink = new HttpLink({
-		uri: process.env.REACT_APP_HTTP_URI,
+		uri: process.env.FEEDREALBVADMIN,
 	});
 
 	const apolloClient = new ApolloClient({
@@ -60,9 +60,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 		// <SessionProvider session={session} refetchInterval={5 * 60}>
 		<CacheProvider value={cache}>
 			<ApolloProvider client={apolloClient}>
-				<PersistGate persistor={persistor}>
-					<Component {...pageProps} />
-				</PersistGate>
+				{/* <PersistGate persistor={persistor}> */}
+				<Component {...pageProps} />
+				{/* </PersistGate> */}
 			</ApolloProvider>
 		</CacheProvider>
 		// </SessionProvider>

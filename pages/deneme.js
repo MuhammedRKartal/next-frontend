@@ -23,8 +23,8 @@ export default function Deneme({ sess }) {
 		return (
 			<div>
 				<Head>
-					<title>Yalova Paragliding</title>
-					<meta name="description" content="Yalova Paragliding" />
+					<title>Deneme</title>
+					<meta name="description" content="Deneme" />
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 				<Layout background={false}>
@@ -38,8 +38,8 @@ export default function Deneme({ sess }) {
 	return (
 		<div>
 			<Head>
-				<title>Yalova Paragliding</title>
-				<meta name="description" content="Yalova Paragliding" />
+				<title>Deneme</title>
+				<meta name="description" content="Deneme" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Layout>

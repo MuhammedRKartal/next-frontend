@@ -22,3 +22,27 @@ export const GET_SINGLE_USER = gql`
 	}
 `;
 
+export const FEEDREAL_ARTICLES = gql`
+	query LastFeedreals($limit: Int, $offset: Int, $category: String) {
+		feedrealWebsite(category: $category, limit: $limit, offset: $offset) {
+			id
+			title
+			sefurl
+			nodes {
+				type
+				text
+			}
+			shortText
+			featured_img
+			category
+			articleLock
+			admin {
+				name
+				surname
+				img
+				title
+			}
+		}
+		pagesCategoryCount(website: "feedreal.com", category: $category)
+	}
+`;
